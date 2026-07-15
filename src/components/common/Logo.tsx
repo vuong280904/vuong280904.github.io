@@ -12,7 +12,7 @@ export function Logo({ className }: { className?: string }) {
       aria-label="Bui Thanh Vuong — home"
       className={className}
     >
-      {/* <motion.svg
+      <motion.svg
         width="36"
         height="36"
         viewBox="0 0 36 36"
@@ -41,12 +41,7 @@ export function Logo({ className }: { className?: string }) {
         >
           V
         </text>
-      </motion.svg> */}
-      <img
-  src="/public/apple-touch-icon.png"
-  alt="Logo"
-  className="w-9 h-9"
-/>
+      </motion.svg>
     </a>
   );
 }
