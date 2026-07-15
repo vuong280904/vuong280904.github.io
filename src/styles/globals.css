@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* shadcn/ui-style HSL tokens, tuned to the light theme */
+    --border: 240 14% 93%;
+    --input: 240 14% 93%;
+    --ring: 330 84% 73%;
+    --card: 240 33% 99%;
+    --card-foreground: 240 10% 10%;
+    --muted: 240 20% 96%;
+    --muted-foreground: 240 5% 45%;
+  }
+
+  .dark {
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 330 84% 73%;
+    --card: 240 12% 10%;
+    --card-foreground: 240 10% 95%;
+    --muted: 240 12% 14%;
+    --muted-foreground: 240 5% 65%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-ink font-body antialiased transition-colors duration-300;
+  }
+
+  html.dark body {
+    @apply bg-dark text-white;
+  }
+
+  ::selection {
+    background-color: rgba(244, 114, 182, 0.25);
+  }
+
+  /* Visible keyboard focus everywhere — accessibility floor, never removed. */
+  :focus-visible {
+    outline: 2px solid #f472b6;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-brand-gradient bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply backdrop-blur-xl border border-white/10 bg-white/60 dark:bg-black/40;
+  }
+
+  .noise {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+    opacity: 0.025;
+  }
+}
+
+/* Respect reduced-motion preference across the whole app */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

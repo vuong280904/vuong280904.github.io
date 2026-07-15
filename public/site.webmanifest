@@ -1,0 +1,10 @@
+{
+  "name": "Bui Thanh Vuong — Software Engineer",
+  "short_name": "Vuong",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "theme_color": "#0F1117",
+  "background_color": "#0F1117",
+  "display": "standalone"
+}
